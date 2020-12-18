@@ -1,0 +1,11 @@
+stages:
+- build
+
+compression:
+  stage: build
+  only:
+  - master
+  - pre
+  - production
+  script:
+  - sh compress.sh ${CI_BUILD_REF_NAME}

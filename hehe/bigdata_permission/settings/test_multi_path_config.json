@@ -1,0 +1,9 @@
+{
+  "testString": "string",
+  "testInt": 123,
+  "testSlice": [1,23,5,6],
+  "testStruct": {
+    "ad":1,
+    "bd":"2"
+  }
+}

@@ -1,0 +1,14 @@
+# Project
+.idea
+
+# vendor
+/vendor/*
+!/vendor/vendor.json
+/log/*
+cli
+cli.exe
+*.exe
+.*_*_swagger.json
+./settings/config.json
+# mod
+go.sum

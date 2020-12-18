@@ -1,0 +1,106 @@
+definitions:
+  serializer.User:
+    properties:
+      avatar:
+        type: string
+      created_at:
+        type: integer
+      id:
+        type: integer
+      nickname:
+        type: string
+      sex:
+        type: integer
+      status:
+        type: string
+      user_name:
+        type: string
+    type: object
+  user.UserLoginService:
+    properties:
+      password:
+        type: string
+      user_name:
+        type: string
+    required:
+    - password
+    - user_name
+    type: object
+  user.UserRegistService:
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+      user_name:
+        type: string
+    required:
+    - name
+    - password
+    - user_name
+    type: object
+host: localhost:8081
+info:
+  contact:
+    email: 联系人电话
+    name: 联系人名称
+  description: xxx项目描述
+  license: {}
+  title: xxx项目
+  version: x.x
+paths:
+  /api/v1/user/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户登录
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserLoginService'
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/serializer.User'
+      security:
+      - "": []
+      summary: 用户登录
+      tags:
+      - 用户
+  /api/v1/user/regist:
+    post:
+      consumes:
+      - application/json
+      description: 用户注册
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/user.UserRegistService'
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            $ref: '#/definitions/serializer.User'
+      security:
+      - "": []
+      summary: 用户注册
+      tags:
+      - 用户
+  /test:
+    get:
+      consumes:
+      - application/x-json-stream
+      operationId: "1"
+      responses:
+        "200": {}
+      summary: 测试接口
+      tags:
+      - 测试
+swagger: "2.0"

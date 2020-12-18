@@ -1,0 +1,62 @@
+{
+  "APP": "bigdata_permission",
+  "Version": "1.0.0",
+  "HttpServerConfig": {
+    "Addr": ":8081",
+    "ReadTimeout": 10,
+    "WriteTimeout": 10
+  },
+  "DbConfig": {
+    "Dsn": "root:@tcp(:3306)/?charset=utf8&timeout=5s&parseTime=true",
+    "MaxOpenConns": 50,
+    "MaxIdleConns": 10
+  },
+  "HttpClient": {
+    "Dial": 1,
+    "KeepAlive": 1
+  },
+  "LogPath": "./log/",
+  "TempFilePath": "./log/",
+  "SwaagerToken": "",
+  "Domain": {
+    "BigDataPermission": "http://127.0.0.1:8081",
+    "Sso": ""
+  },
+  "SsoConfig": {
+    "PlatformId": "",
+    "SecretKey": ""
+  },
+  "Token": {
+    "ExpireTime": 1200,
+    "Salt": "bigdata_permission#$%%1ac"
+  },
+  "ExternalApiDomain": {
+    "BigData": ""
+  },
+  "RedisConfig":{
+    "Addr":"",
+    "Password":"",
+    "DB": 1
+  },
+  "LogCenterConfig": {
+    "Host": "127.0.0.1",
+    "Port": 8082
+  },
+  "QueueConfig": {
+    "Host": "",
+    "Ip": ""
+  },
+  "WeChat": {
+    "ApiHost": "https://qyapi.weixin.qq.com",
+    "ApprovalTemplateId": {
+      "ModuleApprovalTemplateId": ""
+    },
+    "ApprovalApp": {
+      "AppID": "",
+      "CorpSecret": "",
+      "AgentID": 1,
+      "Token":"",
+      "EncodingAesKey": ""
+    }
+  }
+}

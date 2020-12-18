@@ -1,0 +1,165 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "xxx项目描述",
+        "title": "xxx项目",
+        "contact": {
+            "name": "联系人名称",
+            "email": "联系人电话"
+        },
+        "license": {},
+        "version": "x.x"
+    },
+    "host": "localhost:8081",
+    "paths": {
+        "/api/v1/user/login": {
+            "post": {
+                "security": [
+                    {
+                        "": []
+                    }
+                ],
+                "description": "用户登录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户登录",
+                "parameters": [
+                    {
+                        "description": "data",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserLoginService"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"data\": [...]}",
+                        "schema": {
+                            "$ref": "#/definitions/serializer.User"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/regist": {
+            "post": {
+                "security": [
+                    {
+                        "": []
+                    }
+                ],
+                "description": "用户注册",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户注册",
+                "parameters": [
+                    {
+                        "description": "data",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.UserRegistService"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 200, \"data\": [...]}",
+                        "schema": {
+                            "$ref": "#/definitions/serializer.User"
+                        }
+                    }
+                }
+            }
+        },
+        "/test": {
+            "get": {
+                "consumes": [
+                    "application/x-json-stream"
+                ],
+                "tags": [
+                    "测试"
+                ],
+                "summary": "测试接口",
+                "operationId": "1",
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    },
+    "definitions": {
+        "serializer.User": {
+            "type": "object",
+            "properties": {
+                "avatar": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "sex": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "user.UserLoginService": {
+            "type": "object",
+            "required": [
+                "password",
+                "user_name"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "user.UserRegistService": {
+            "type": "object",
+            "required": [
+                "name",
+                "password",
+                "user_name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
