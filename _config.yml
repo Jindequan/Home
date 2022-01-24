@@ -1,2 +1,10 @@
 #theme: jekyll-theme-cayman
-remote_theme: minimal-mistakes-jekyll
+remote_theme: "minimal-mistakes-jekyll"
+logo: "favicon.ico"
+locale: "en-US"
+title: "Jin's Web Home"
+subtitle: "share something"
+name: "Jin"
+description: ""
+teaser: "/assets/images/2022.jpg"
+breadcrumbs: true
